@@ -151,7 +151,7 @@ mtcarsDF['mpg'].count()
 mtcarsDF.describe()  # default only numeric
 
 #%% sort
-mtcarsDF.sort_values(by='gear', axis=0)
+   mtcarsDF.sort_values(by='gear', axis=0)
 mtcarsDF.sort_values(by=['gear', 'mpg'])
 
 

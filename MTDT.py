@@ -59,7 +59,8 @@ from sklearn.model_selection import train_test_split
 X2_train, X2_test, Y2_train, Y2_test = train_test_split(X2, Y2, test_size=.20, random_state=123 )
 X2_train.shape
 X2_test.shape
-10/data2.shape[0]
+Y2_train.shape
+Y2_test.shape
 from sklearn.tree import DecisionTreeRegressor #note this
 regrModel = DecisionTreeRegressor()  #model with parameter
 regrModel.fit(X2_train, Y2_train)
@@ -69,3 +70,11 @@ len(ypred2)
 df2 = pd.DataFrame({'Actual':Y2_test, 'Predicted': ypred2, 'diff':Y2_test-ypred2})
 df2
 df2.shape[0]
+from sklearn import metrics
+metrics.mean_absolute_error(y_true=Y2_test, y_pred=ypred2)
+sum(abs(df2['diff']))/df2.shape[0]
+metrics.mean_squared_error(y_true=Y2_test, y_pred=ypred2)
+np.sqrt(metrics.mean_squared_error(y_true=Y2_test, y_pred=ypred2))
+newData2 = X2.sample(4)
+newData2
+regrModel.predict(newData2)

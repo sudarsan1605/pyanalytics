@@ -58,7 +58,7 @@ newData
 clsModel.predict(newData)
 
 #visualise 
-pip install graphviz
+#pip install graphviz
 from graphviz import Source
 from sklearn import tree
 tree.plot_tree(decision_tree=clsModel)
